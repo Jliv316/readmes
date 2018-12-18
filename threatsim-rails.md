@@ -45,6 +45,7 @@ We currently run on Ruby 2.3.7. You can install it directly, but we recommend
 using a Ruby version manager. rbenv and chruby are both available on brew, and
 rvm can be installed from it's website. Additionally, you may want to install
 ruby-build to simplify the ruby build process. It can also be found on brew.
+Many of us use rbenv, so I will show you that way.
 
     % brew update
     % brew install rbenv
@@ -77,6 +78,14 @@ install it, but I recommend brew.
 
     % brew install mysql@5.7
 
+JL: After installing mysql@5.7 via brew, I had to install the mysql2 gem and 
+point to where mysql@5.7 gem was located.
+
+```
+gem install mysql2 -v '0.3.21' -- \
+  --with-mysql-config=$(brew --prefix mysql@5.7)/bin/mysql_config
+```
+
 ### Redis
 
 We heavily leverage Redis, both for caching and queuing for background processing.
@@ -98,7 +107,7 @@ After installing nodejs, install phantomjs
 
     % npm install -g phantomjs-prebuilt
     ...
-    % phantomjs -v # should output 2.2.1
+    % phantomjs -v # should output 2.1.1
 
 
 #### Other libraries need before running bundle install
