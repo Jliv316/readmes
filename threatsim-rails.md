@@ -19,7 +19,7 @@ development environment.
 
     * Homebrew
     * Editor
-    * Ruby 2.2.8
+    * Ruby 2.3.7
     * MySQL
     * Redis
     * Other odds and ends
@@ -46,7 +46,29 @@ using a Ruby version manager. rbenv and chruby are both available on brew, and
 rvm can be installed from it's website. Additionally, you may want to install
 ruby-build to simplify the ruby build process. It can also be found on brew.
 
-    % brew install rbenv ruby-build
+    % brew update
+    % brew install rbenv
+    % rbenv init
+
+Append the following to your bash_profile/zshrc.
+
+    % eval "$(rbenv init -)"
+
+Now install ruby 2.3.7 using rbenv.
+
+    % rbenv install 2.3.7
+
+Navigate to your threatsim-rails and declare your local ruby version.
+
+    % rbenv local 2.3.7
+
+Check that it did, indeed, change ruby versions with
+
+    % ruby -v
+
+You should see something like:
+
+    % ruby 2.3.7p456 (2018-03-28 revision 63024) [universal.x86_64-darwin17]
 
 ### MySQL
 
